@@ -1,0 +1,142 @@
+<?php 
+   include("conex2.php");
+    $rut=$_POST['rut'];
+    $nombre=$_POST['nombre'];
+    $apellido=$_POST['apellido'];
+    
+
+$sql = "INSERT INTO usuarios (`rut`, `nombre`, `apellido paterno`, `apellido materno`, ) VALUES ('$rut', '$nombre', '$apellido')";
+
+ $con->query($sql) or die('sql error 1: ' .mysqli_error($con));
+
+ header("Location: formulario.html");
+
+
+?> 
+
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+<!--
+.Estilo2 {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 24px;
+	font-style: italic;
+}
+-->
+</style>
+</head>
+<title></title>
+<link href="css/formulario.css" rel="stylesheet" type="text/css">
+<body bgcolor="#FFFF80">
+
+<form name="form" method="post" action="">
+<table width="393" border="0" align="center" cellpadding="5" cellpadding="1" bgcolor="#9999FF">
+<td colspan="2" align="center" bgcolor="#0099FF">  <span class="Estilo2">Registro</span></td>
+</tr>
+<tr>
+<td width="110" bgcolor="#33CCFF">
+<strong>Nombres</strong></td>
+<td width="260" bgcolor="#33CCFF">
+<input name="nombres" type="text" id="nombres"/>
+</td>
+</tr>
+<tr>
+<td bgcolor="#00FFFF"><strong>Apellido Paterno</strong>
+</td>
+<td bgcolor="#999999"><input name="apellidopaterno" type="text"/></td>
+</tr>
+<tr>
+<td bgcolor="#D7D7FF"><strong>Apellido Materno</strong></td>
+<td bgcolor="#6699FF"><input name="apellidomaterno" type="text" />
+</td>
+</tr>
+<tr>
+<td bgcolor="#D7D7FF"><strong>Fecha De Nacimiento</strong></td>
+<td bgcolor="#6699FF"><input name="fechadenacimiento" type="text" />
+</td>
+  </tr>
+    <tr>
+<td bgcolor="#D7D7FF"><strong>Nacionalidad</strong></td>
+<td bgcolor="#6699FF"><input name="nacionalidad" type="text" />
+</td>
+    </tr>
+<tr>
+      <td bgcolor="#D7D7FF"><strong>Sexo</strong></td>
+      <td bgcolor="#FFFFFF">
+        <input name="sexo" type="radio"/> Masculino
+        <input name="sexo" type="radio"/> Femenino </td>
+  </tr>
+<tr>
+      <td bgcolor="#D7D7FF"><strong>Dirección</strong></td>
+      <td bgcolor="#FFFFFF"><input name="direccion" type="text" size="40" /></td>
+  </tr>
+<tr>
+      <td bgcolor="#D7D7FF"><strong>Email</strong></td>
+      <td bgcolor="#FFFFFF"><input name="email" type="text" size="40" /></td>
+  </tr>
+<tr>
+      <td bgcolor="#D7D7FF"><strong>Ciudad</strong></td>
+      <td bgcolor="#FFFFFF">
+        <select name="ciudad" id="ciudad">
+          <option value="">Seleccione</option>
+          <option value="1">Curicó</option>
+          <option value="2">Santiago</option>
+          <option value="3">Talca</option>
+          <option value="4">San Fernando</option>
+          <option value="5">Concepcion</option>
+          <option value="7">Rancagua</option>
+        </select>     
+     </td>
+
+</tr>
+<tr>
+      <td bgcolor="#D7D7FF"><strong>Carrera</strong></td>
+      <td bgcolor="#FFFFFF">
+
+     <select name="carrera" id="carrera">
+        <option value="">Seleccione</option>
+        <option value="1">Ingeniería de Sistemas e Infromática</option>
+        <option value="2">Ingeniería Civil</option>
+        <option value="3">Arquitectura</option>
+        <option value="4">Ingeniería Agroindustrial</option>
+        <option value="5">Medicina General</option>
+        <option value="6">Técnico en Producción Audiovisual</option>
+     </select>
+      </td>
+
+</tr>
+<tr>
+      <td bgcolor="#D7D7FF"><strong>Liceo De Procedencia</strong></td>
+      <td bgcolor="#FFFFFF"><input name="colegio" type="text" id="colegio" size="40" /></td>
+    
+</tr>
+<tr>
+      <td bgcolor="#D7D7FF"><strong>Tipo Colegio </strong></td>
+      <td bgcolor="#FFFFFF"><input name="tipocolegio" type="radio" value="radiobutton" />
+Municipal
+  <input name="tipocolegio" type="radio" value="radiobutton" /> 
+  Pagado
+  <input name="tipocolegio" type="radio" value="radiobutton" /> 
+  Municipal-Pagado</td>
+  </tr>
+<tr>
+      <td bgcolor="#D7D7FF"><strong>Años De Estudios</strong></td>
+      <td bgcolor="#FFFFFF">
+           <input name="años" type="radio" value="radiobutton" />0-1 año<br>
+     <input name="años" type="radio" value="radiobutton" />2-4 años<br>
+     <input name="años" type="radio" value="radiobutton"/>5-7 años<br>
+     <input name="años" type="radio" value="radiobutton"/>8-10 años<br>
+      </td>
+    
+</tr>
+<tr>
+      <td colspan="2" align="center" bgcolor="#0066CC">
+        <input name="enviar" type="button" id="enviar" value="Registrar" />     
+      </td>
+     </tr>
+</table>
+</form>
+</body>
+</html>
